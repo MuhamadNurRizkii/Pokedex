@@ -1,0 +1,15 @@
+1. Mulai
+2. Buat container utama untuk menampilkan kartu Pokémon
+3. Tentukan jumlah Pokémon yang akan ditampilkan (misal: 20)
+4. Kirim permintaan ke "https://pokeapi.co/api/v2/pokemon?limit=20"
+5. Jika respons API berhasil:
+    a. Ambil daftar Pokémon
+    b. Untuk setiap Pokémon dalam daftar:
+       i. Ambil nama dan ID Pokémon
+       ii. Buat elemen card untuk menampilkan Pokémon
+       iii. Tambahkan gambar berdasarkan ID Pokémon
+       iv. Tambahkan nama Pokémon dalam card
+       v. Tambahkan card ke dalam container utama
+6. Jika respons API gagal, tampilkan pesan error
+7. (Opsional) Tambahkan interaksi seperti detail Pokémon saat card diklik
+8. Selesai

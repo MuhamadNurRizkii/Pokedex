@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link href="src/output.css" rel="stylesheet" />
+  </head>
+  <body class="overflow-x-hidden bg-blue-200">
+    <nav class="w-full px-4 py-4 flex justify-around items-center bg-blue-600">
+      <h2 class="text-white font-medium text-2xl">Pokedex</h2>
+      <form>
+        <input
+          type="text"
+          placeholder="Search..."
+          class="bg-white outline-0 px-4 py-1 rounded-sm mr-2"
+        />
+        <button
+          type="submit"
+          class="px-3 py-1 text-white cursor-pointer border border-white rounded-sm hover:bg-white hover:text-blue-600 font-normal"
+        >
+          Search
+        </button>
+      </form>
+    </nav>
+    <h2 class="text-center text-white mt-8 font-bold text-3xl uppercase">
+      List Pokemon
+    </h2>
+
+    <div
+      class="container flex justify-center items-center flex-wrap gap-4 w-full px-4 py-4 container-pokemon"
+    ></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
