@@ -1,3 +1,8 @@
+import { showPopUp } from "./pop-up.mjs";
+import { containerPopUp } from "./pop-up.mjs";
+import { cross } from "./pop-up.mjs";
+import { deleteCard } from "./pop-up.mjs";
+
 fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
   .then((response) => response.json())
   .then((data) => {
@@ -12,11 +17,12 @@ function fetchPokemonData(url) {
   fetch(url)
     .then((response) => response.json())
     .then((pokemon) => {
-      console.log(pokemon.stats);
-      const name = pokemon.name;
+      console.log(pokemon.sprites.front_default);
+      const name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
       const img = pokemon.sprites.front_default;
       const types = pokemon.types.map((t) => t.type.name).join(", ");
 
+      const button = document.createElement("button");
       const card = document.createElement("div");
       card.innerHTML = `
       <img src="${img}" alt="${name}" class="w-full h-auto">
@@ -24,9 +30,24 @@ function fetchPokemonData(url) {
       <p>type: ${types}</p>
       `;
 
+      button.textContent = "Detail";
+      button.classList.add(
+        "w-full",
+        "px-4",
+        "py-2",
+        "bg-blue-600",
+        "group-hover:bg-white",
+        "group-hover:text-blue-600",
+        "text-white",
+        "font-medium",
+        "mt-2",
+        "rounded-sm",
+        "cursor-pointer"
+      );
       card.classList.add(
         "w-[180px]",
-        "h-[250px]",
+        "group",
+        "h-[280px]",
         "border",
         "bg-white",
         "rounded-sm",
@@ -38,6 +59,16 @@ function fetchPokemonData(url) {
         "hover:bg-blue-500",
         "hover:border-white"
       );
+
+      card.appendChild(button);
+
+      // card.addEventListener("click", () => {
+      //   showPopUp(pokemon);
+      // });
+
+      button.addEventListener("click", function () {
+        showPopUp(pokemon);
+      });
 
       container.appendChild(card);
     });

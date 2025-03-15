@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
     <link href="src/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="overflow-x-hidden bg-blue-200">
     <nav class="w-full px-4 py-4 flex justify-around items-center bg-blue-600">
@@ -32,6 +39,63 @@
       class="w-ful flex justify-center items-center flex-wrap my-8 gap-2"
     ></div>
 
-    <script src="script.js"></script>
+    <!-- pop up -->
+    <div
+      id="container-popUp"
+      class="fixed hidden inset-0 justify-center items-center bg-[rgba(0,0,0,0.3)]"
+    >
+      <div id="pop-up" class="rounded-md relative w-[350px] bg-white">
+        <img
+          src="
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+          alt=""
+          id="image"
+          class="w-[250px] mx-auto h-auto"
+        />
+        <div
+          class="absolute -top-2 -right-2 w-6 h-6 p-4 rounded-full flex justify-center items-center bg-slate-100"
+        >
+          <i class="fa-solid fa-xmark text-2xl text-red-600 cursor-pointer"></i>
+        </div>
+        <!-- informasi -->
+        <div class="bg-slate-400 rounded-md w-full px-4 py-2">
+          <h3 id="name" class="text-xl font-medium">Bulbasor</h3>
+          <p id="type">Grass</p>
+          <div id="stats">
+            <!-- hp start -->
+            <p>hp</p>
+            <div class="flex justify-center items-center gap-2">
+              <div class="hp w-[300px] h-2 bg-slate-300 rounded-sm">
+                <div class="valueHp h-2 bg-blue-600 rounded-sm"></div>
+              </div>
+              <span class="hpNilai">50</span>
+            </div>
+            <!-- hp end -->
+
+            <!-- attack start -->
+            <p>attack</p>
+            <div class="flex justify-center items-center gap-2">
+              <div class="attack w-[300px] h-2 bg-slate-300 rounded-sm">
+                <div class="valueAttack h-2 bg-blue-600 rounded-sm"></div>
+              </div>
+              <span class="attackNilai">50</span>
+            </div>
+            <!-- attack end -->
+
+            <!-- defends start -->
+            <p>Defends</p>
+            <div class="flex justify-center items-center gap-2">
+              <div class="defends w-[300px] h-2 bg-slate-300 rounded-sm">
+                <div class="valueDefends h-2 bg-blue-600 rounded-sm"></div>
+              </div>
+              <span class="defendsNilai">50</span>
+            </div>
+            <!-- defends end -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="script.mjs"></script>
   </body>
 </html>
