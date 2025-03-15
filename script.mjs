@@ -1,7 +1,4 @@
 import { showPopUp } from "./pop-up.mjs";
-import { containerPopUp } from "./pop-up.mjs";
-import { cross } from "./pop-up.mjs";
-import { deleteCard } from "./pop-up.mjs";
 
 fetch("https://pokeapi.co/api/v2/pokemon?limit=20")
   .then((response) => response.json())

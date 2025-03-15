@@ -40,4 +40,11 @@ export function showPopUp(pokemon) {
     containerPopUp.classList.add("hidden");
     containerPopUp.classList.remove("flex");
   });
+
+  containerPopUp.addEventListener("click", function (e) {
+    if (e.target !== cross) {
+      containerPopUp.classList.add("hidden");
+      containerPopUp.classList.remove("flex");
+    }
+  });
 }
