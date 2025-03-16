@@ -42,7 +42,7 @@ function fetchPokemonData(url) {
         "cursor-pointer"
       );
       card.classList.add(
-        "w-[180px]",
+        "w-[170px]",
         "group",
         "h-[280px]",
         "border",
